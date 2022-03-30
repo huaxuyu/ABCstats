@@ -51,7 +51,7 @@ lambdaOpt = function(data_seq, group_vector, L1 = -3, L2 = 3){
   # Find the best lambda
   p_seq = append(p_seq, sum(log10(p_values)))
   index = match(max(p_seq),p_seq)
-  lambda_final = lambda_seq[index]
+  lambda_final = round(lambda_seq[index],2)
 
   # Perform data transformation using the best lambda
   if(is.na(lambda_final)){
