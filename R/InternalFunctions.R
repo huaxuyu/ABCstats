@@ -40,7 +40,7 @@ lambdaOpt = function(data_seq, group_vector, L1 = -3, L2 = 3){
         p_values[j] = shapiro.test(group_data)$p.value
       }
     }
-    p_seq[i] = prod(p_values)
+    p_seq[i] = sum(log10(p_values))
   }
 
   # Calculate the pooled data normality for original data
@@ -49,7 +49,7 @@ lambdaOpt = function(data_seq, group_vector, L1 = -3, L2 = 3){
   }
 
   # Find the best lambda
-  p_seq = append(p_seq, prod(p_values))
+  p_seq = append(p_seq, sum(log10(p_values)))
   index = match(max(p_seq),p_seq)
   lambda_final = lambda_seq[index]
 
