@@ -2,7 +2,7 @@ Package: ABCstats
 Type: Package
 Title: Adaptive Box-Cox Transformation for Improving Data Normality
 Version: 1.0.0
-Author: Huaxu
+Author: Huaxu Yu
 Maintainer: <hxyu@chem.ubc.ca>
 Description: Feature-specific data transformation to improve data normality. The power 
   parameter lambda in Box-Cox transformation is optimized using Shapiro-Wilk normality test 
