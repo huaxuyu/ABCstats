@@ -34,7 +34,8 @@ Three imputation methods are provided here: \cr
 1. \code{default}, default imputation method by ABC transformation \cr
 2. \code{knn}, KNN method supported by \pkg{VIM} package. See \code{\link[VIM]{kNN}} for details. \cr
 3. \code{addition}, only replace gaps with identical small values (max/1000). \cr
-4. \code{rf}, KNN method supported by \pkg{mice} package. See \code{\link[VIM]{mice}} for details. \cr
+4. \code{rf}, random forest method supported by \pkg{mice} package. See \code{\link[VIM]{mice}} for details.
+This method is not recommended due to long calculation time when feature number > 200. \cr
 
 \code{FeatureTable} contains measured signal intensities of metabolic features,
 with features in row and samples in column (default). The column names should
