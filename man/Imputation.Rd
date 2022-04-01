@@ -31,9 +31,10 @@ Missing value imputation by different methods.
 }
 \details{
 Three imputation methods are provided here: \cr
-1. Default imputation method by ABC transformation \cr
-2. KNN method supported by \pkg{VIM} package. See \code{\link[VIM]{kNN}} for details. \cr
-3. Replace gaps with identical small values (max/1000). \cr
+1. \code{default}, default imputation method by ABC transformation \cr
+2. \code{knn}, KNN method supported by \pkg{VIM} package. See \code{\link[VIM]{kNN}} for details. \cr
+3. \code{addition}, only replace gaps with identical small values (max/1000). \cr
+4. \code{rf}, KNN method supported by \pkg{mice} package. See \code{\link[VIM]{mice}} for details. \cr
 
 \code{FeatureTable} contains measured signal intensities of metabolic features,
 with features in row and samples in column (default). The column names should
