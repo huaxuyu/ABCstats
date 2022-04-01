@@ -95,6 +95,10 @@ impute = function(df, impt="default"){
       }
       df[i,] = data_seq
     }
+  } else if (impt=="rf") {
+    df_t = as.data.frame(t(df))
+    df_t_imp = mice::mice(df_t, meth = "rf", ntree = 3)
+    df = t(df_t_imp)
   } else {
     message("Invalid method name. Default method is used.")
     df = impute(df)
