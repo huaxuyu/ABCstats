@@ -43,10 +43,12 @@ ABC transformation contains three modules: \cr
 with features in row and samples in column (default). The column names should
 be sample names, and the first row should be sample group names (e.g. control, case).\cr
 
-Three imputation methods are provided here: \cr
-1. Default imputation method by ABC transformation \cr
-2. KNN method supported by \pkg{VIM} package. See \code{\link[VIM]{kNN}} for details. \cr
-3. Replace gaps with identical small values (max/1000). \cr
+Four imputation methods are provided here: \cr
+1. \code{default}, default imputation method by ABC transformation \cr
+2. \code{knn}, KNN method supported by \pkg{VIM} package. See \code{\link[VIM]{kNN}} for details. \cr
+3. \code{addition}, only replace gaps with identical small values (min/5). \cr
+4. \code{rf}, random forest method supported by \pkg{mice} package. See \code{\link[VIM]{mice}} for details.
+This method is not recommended due to long calculation time when feature number > 200. \cr
 }
 \examples{
 TransformedTable = ABCtransform(DemoData)
