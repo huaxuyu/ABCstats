@@ -30,7 +30,7 @@ This function returns the imputed data frame.
 Missing value imputation by different methods.
 }
 \details{
-Three imputation methods are provided here: \cr
+Four imputation methods are provided here: \cr
 1. \code{default}, default imputation method by ABC transformation \cr
 2. \code{knn}, KNN method supported by \pkg{VIM} package. See \code{\link[VIM]{kNN}} for details. \cr
 3. \code{addition}, only replace gaps with identical small values (min/5). \cr
