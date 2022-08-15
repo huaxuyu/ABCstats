@@ -91,7 +91,7 @@ impute = function(df, impt="default"){
       # Gap-filling by adding a constant small value
       zero_number = sum(data_seq == 0)
       if(zero_number != 0){
-        data_seq[data_seq == 0] = min(data_seq)/5
+        data_seq[data_seq == 0] = min(data_seq[data_seq!=0])/5
       }
       df[i,] = data_seq
     }
