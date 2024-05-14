@@ -14,9 +14,12 @@ lambdaOpt = function(data_seq, group_vector, L1 = -3, L2 = 3){
   # Generate a list to store quantitative data from each group
   ds = c()
 
+  # Data scaling to set the minimum value to 2
+  data_seq_scaled = data_seq/min(data_seq)*2
+
   # Separate data into individual groups
   for (i in 1:length(gv)) {
-    ds[[i]] = data_seq[group_vector == gv[i]]
+    ds[[i]] = data_seq_scaled[group_vector == gv[i]]
 
     # Check identical values
     if (all(ds[[i]] == ds[[i]][1])) {
@@ -56,12 +59,13 @@ lambdaOpt = function(data_seq, group_vector, L1 = -3, L2 = 3){
   # Perform data transformation using the best lambda
   if(is.na(lambda_final)){
     note = "Original"
+    data_seq_trans = data_seq
   } else if(lambda_final == 0) {
-    data_seq = log(data_seq)
-  } else {data_seq = (data_seq^lambda_final-1)/lambda_final}
+    data_seq_trans = log(data_seq_scaled)
+  } else {data_seq_trans = (data_seq_scaled^lambda_final-1)/lambda_final}
 
   # Return the results in a list
-  result = list("data_trans" = data_seq,
+  result = list("data_trans" = data_seq_trans,
                 "lambda" = lambda_final,
                 "note" = note)
   return(result)

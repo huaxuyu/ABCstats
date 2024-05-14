@@ -69,9 +69,6 @@ ABCtransform = function(FeatureTable, Impt="default", LambdaRange=c(-3,3),
     # Extract the quantitative data
     data_seq = as.numeric(result_table[feature,])
 
-    # Data scaling to set the minimum value to 1
-    data_seq = data_seq/min(data_seq)*2
-
     # ABC transformation
     opt_result = lambdaOpt(data_seq, GroupNames, L1 = LambdaRange[1], L2 = LambdaRange[2])
     FeatureTable$lambda[feature+1] = opt_result$lambda
