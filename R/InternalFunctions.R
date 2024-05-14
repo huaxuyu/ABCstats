@@ -59,6 +59,7 @@ lambdaOpt = function(data_seq, group_vector, L1 = -3, L2 = 3){
   # Perform data transformation using the best lambda
   if(is.na(lambda_final)){
     note = "Original"
+    lambda_final = "Data were not transformed since the original data have the highest normality"
     data_seq_trans = data_seq
   } else if(lambda_final == 0) {
     data_seq_trans = log(data_seq_scaled)
