@@ -14,7 +14,7 @@ install.packages("devtools")
 
 **Install ABCstats**
 ```
-devtools::install_github("Waddlessss/ABCstats")
+devtools::install_github("huaxuyu/ABCstats")
 ```
 
 ## Usage
